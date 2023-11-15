@@ -13,6 +13,8 @@ function App() {
 
   const fetchLocationInfo = async () => {
     setIsLoading(true);
+    setLocationInfo(null)
+    
     try {
       const response = await axios.get(`https://api.zippopotam.us/${country}/${postalCode}`);
       setLocationInfo(response.data);
@@ -22,6 +24,7 @@ function App() {
       setPostalCode('')
     }
     setIsLoading(false);
+
   };
 
   const clearData = () => {
